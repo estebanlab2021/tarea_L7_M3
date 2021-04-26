@@ -90,37 +90,37 @@
             $('#tamano').css('background-color', '#D6EAF8');
             $('#visibleContainer').css('background-color', '#D6EAF8');
 
-            $('#imagen').html("<img src='cohete.png' class='img-fluid' width='200' height='200'>");
+            $('#imagen').html("<img src='cohete.png' class='img-fluid' width='200' height='200' style='position: relative;'>");
 
             $('#arriba').click(function() {
-                $('#vertical').removeClass('align-content-end');
-                $('#vertical').removeClass('align-content-center');
-                $('#vertical').addClass('align-content-star');
+                $('img').animate({
+                    bottom: '150px'
+                }, 800)
             });
 
             $('#centro').click(function() {
-                $('#imagen').removeClass('text-star');
-                $('#imagen').removeClass('text-end');
-                $('#imagen').addClass('text-center');
-                $('#vertical').removeClass('align-content-star');
-                $('#vertical').removeClass('align-content-end');
-                $('#vertical').addClass('align-content-center');
+                $('img').animate({
+                    bottom: '0',
+                    left: '0'
+                }, 800)
             });
 
             $('#abajo').click(function() {
-                $('#vertical').removeClass('align-content-center');
-                $('#vertical').removeClass('align-content-star');
-                $('#vertical').addClass('align-content-end');
+                $('img').animate({
+                    bottom: '-150px'
+                }, 800)
             });
 
             $('#izquierda').click(function() {
-                $('#imagen').removeClass('text-center');
-                $('#imagen').removeClass('text-end');
-                $('#imagen').addClass('text-star');
+                $('img').animate({
+                    left: '-150px'
+                }, 800)
             });
+
             $('#derecha').click(function() {
-                $('#imagen').removeClass('text-center');
-                $('#imagen').addClass('text-end');
+                $('img').animate({
+                    left: '150px'
+                }, 800)
             });
 
             $('#invisible').click(function() {
@@ -132,15 +132,21 @@
             });
 
             $('#aumentar').click(function() {
-                $('#imagen img').css("width", "400");
+                $('img').animate({
+                    width: '+=250px'
+                }, 600);
             });
 
             $('#disminuir').click(function() {
-                $('#imagen img').css("width", "80");
+                $('img').animate({
+                    width: '-=80px'
+                }, 600);
             });
 
             $('#normal').click(function() {
-                $('#imagen img').css("width", "200");
+                $('img').animate({
+                    width: '200px'
+                }, 600);
             });
 
         });
